@@ -3,6 +3,7 @@ from django.core.management.utils import get_random_secret_key
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+project_name = str(BASE_DIR).split('\\')[-1]
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # DEBUG = os.getenv("DEBUG", "False") == "True"
 DEBUG = True
@@ -30,7 +31,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mySite.urls'
+ROOT_URLCONF = f'{project_name}.urls'
 
 TEMPLATES = [
     {
@@ -48,7 +49,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mySite.wsgi.application'
+WSGI_APPLICATION = f'{project_name}.wsgi.application'
 
 # if DEVELOPMENT_MODE is True:
 #     DATABASES = {
