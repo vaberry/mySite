@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My New App!</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 <body>
 {% block content %}
 <h1>Hello!</h1>
+<img>
+<img src="{% static 'img/headshot.jpg' %}" alt="My image">
+
 {% endblock content %}
 </body>
 </html>
