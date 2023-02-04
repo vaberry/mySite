@@ -7,13 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vet | MBA | Python Nerd</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.ico' %}"/>
-    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-</head>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+
 <body>
 {% block content %}
-<h1>Hello!</h1>
-<img>
-<img src="{% static 'main/img/headshot.jpg' %}" alt="My image">
+
+<div class="grid-one">
+    <div>
+        <img src="{% static 'main/img/headshot.jpg' %}" style="height: 150px; width: 150px; border-radius: 50%;" alt="">
+    </div>
+    <div>
+        <img src="{% static 'main/img/logo8.png' %}" alt="">
+    </div>
+    <!-- <div>
+        <img src="{% static 'main/img/logo8.png' %}" alt="">
+    </div> -->
+</div>
+
+<div class="grid-two">
+    <h1>2</h1>
+</div>
+
+
+
 
 {% endblock content %}
 </body>

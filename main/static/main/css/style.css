@@ -1,0 +1,17 @@
+body {
+	display: grid;
+	height: 100vh;
+	grid-template-rows: 1fr 4fr;
+}
+
+.grid-one {
+	background-color: lightgray;
+}
+
+.grid-one > h1 {
+	font:100;
+}
+
+.grid-two {
+	background-color: brown;
+}
