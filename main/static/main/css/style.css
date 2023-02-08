@@ -11,6 +11,7 @@ a {
 .main-grid {
 	display: grid;
 	grid-template-columns: .5fr .5fr 1.25fr;
+	column-gap: 2rem;
 }
 
 .left-grid {
@@ -96,7 +97,7 @@ a {
 	font-family: "Quicksand";
 	/* background-color: gray; */
 	/* overflow-y: scroll */
-	margin-left: 20px;
+	/* margin-left: 20px; */
 	text-align: center;
 }
 
