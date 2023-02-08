@@ -4,3 +4,6 @@ from django.views.generic import View,TemplateView
 
 class Index(TemplateView):
     template_name='index.html'
+
+class Test(TemplateView):
+    template_name='test.html'
