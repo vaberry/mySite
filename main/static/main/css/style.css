@@ -37,7 +37,7 @@ a {
 
 .about-me {
     width: 300px;
-    background-color: red;
+    /* background-color: red; */
     text-align: center;
 }
 
@@ -55,6 +55,9 @@ a {
 }
 
 .technologies {
+	/* display: flex;
+	flex-direction: row;
+	flex-wrap: wrap; */
     width: 200px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
