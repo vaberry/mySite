@@ -3,6 +3,11 @@ body {
 	background-color:  #046A38;
 }
 
+a {
+	text-decoration: none;
+	color: white;
+}
+
 .main-grid {
 	display: grid;
 	grid-template-columns: .5fr .5fr 1.25fr;
@@ -56,14 +61,17 @@ body {
 	/* background-color:#046A38; */
 	/* transition: 0.3s; */
 	/* border-radius: 5px; */
-	margin-left: 30px;
+	/* margin-left: 30px; */
 	color: black;
+	font-family: "Quicksand";
   }
 
 
 .middle-grid {
 	height: 100vh;
 	margin-left: 50px;
+	font-family: "Quicksand";
+	text-align: center;
 	/* background-color: gray; */
 	/* -webkit-overflow-scrolling: scroll; */
 	/* overflow: scroll; */
@@ -83,8 +91,13 @@ body {
 }
 
 .right-grid {
-	color: white;
+	/* color: white; */
 	height: 100vh;
+	font-family: "Quicksand";
 	/* background-color: gray; */
 	/* overflow-y: scroll */
+	/* margin-left: 20px; */
+	text-align: center;
 }
+
+
