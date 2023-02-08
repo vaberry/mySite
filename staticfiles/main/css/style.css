@@ -37,7 +37,6 @@ a {
 
 .about-me {
     width: 300px;
-    /* background-color: red; */
     text-align: center;
 }
 
@@ -55,9 +54,25 @@ a {
 }
 
 .technologies {
-	/* display: flex;
-	flex-direction: row;
-	flex-wrap: wrap; */
-    width: 200px;
-    /* background-color: blueviolet; */
+	text-align: center;
+    width: 150px;
+}
+
+.projects {
+	text-align: center;
+}
+
+.projects-list {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: DodgerBlue;
+}
+
+.projects-list > div {
+	background-color: #f1f1f1;
+	width: 80px;
+	margin: 10px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
 }
