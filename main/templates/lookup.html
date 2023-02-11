@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'main/css/dictionary.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sassy+Frass">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <title>Projects: Word Decoder</title>
+</head>
+<header>
+    <a href="{% url 'index' %}">Back to Profile</a>
+</header>
+<body>
+    <div class="search-form">
+        <form action="" method="get">
+            <input type="text" name="word" placeholder="Type a word and press enter">
+            <button type="submit" hidden>Submit</button>
+        </form>
+    </div>
+    <div>
+        <h1 style="text-align: center;">{{ word }}</h1>
+    </div>
+    <div class="display-form">
+        {% for d in definition %}
+        <p class="definition">{{ d }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
