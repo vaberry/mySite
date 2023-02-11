@@ -10,17 +10,20 @@ class Index(TemplateView):
 class Lookup(View):
     def get(self, request, *args, **kwargs):
         if request.method == "GET":
-
             if 'word' in request.GET:
                 word = request.GET.get('word')
-                APP_ID = os.getenv("APP_ID")
-                APP_KEY = os.getenv("APP_KEY")
+                LOOKUP_APP_ID = os.getenv("LOOKUP_APP_ID")
+                LOOKUP_APP_KEY = os.getenv("LOOKUP_APP_KEY")
                 endpoint = "entries"
                 language_code = "en-us"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
-                response = requests.get(url, headers = {"app_id": str(APP_ID), "app_key": str(APP_KEY)})
+                response = requests.get(url, headers = {"app_id": str(LOOKUP_APP_ID), "app_key": str(LOOKUP_APP_KEY)})
+
                 r = json.loads(response.text)
-                definition = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]             
+                if "results" in r.keys():
+                    definition = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]
+                else:
+                    definition = ["No results found..."]           
 
                 context = {
                     'word' : word,
