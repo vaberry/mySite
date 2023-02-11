@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.ico' %}"/>
-    <link rel="stylesheet" href="{% static 'main/css/dictionary.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/lookup.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sassy+Frass">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <title>Projects: Word Lookup</title>
@@ -19,7 +19,7 @@
 <body>
     <div class="search-form">
         <form action="" method="get">
-            <input type="text" name="word" placeholder="Type a word and press enter">
+            <input class="word-input" type="text" name="word" placeholder="Type a word and press enter">
             <button type="submit" hidden>Submit</button>
         </form>
     </div>

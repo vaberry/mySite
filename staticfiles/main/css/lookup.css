@@ -23,6 +23,10 @@ input {
     transform: translate(50%, -50%);
 }
 
+.word-input {
+    padding-left: 10px;
+}
+
 .display-form {
     display: grid;
     grid-template-columns: 1fr;

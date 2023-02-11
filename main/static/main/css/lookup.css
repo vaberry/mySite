@@ -1,0 +1,50 @@
+*{
+    font-family: "Quicksand";
+	background-color: #004C54;
+    color: #A5ACAF;
+}
+
+header {
+    margin: 20px;
+}
+
+input {
+    background-color: white;
+    color: black;
+    width:30vw;
+    height: 30px;
+}
+
+.search-form {
+    border: 5px solid;
+    position: absolute;
+    top: 30%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.word-input {
+    padding-left: 10px;
+}
+
+.display-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: white;
+    border: 5px solid;
+    position: absolute;
+    top: 60%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    height: 30vh;
+    width: 40vw;
+    overflow-y: scroll;
+}
+
+.display-form p {
+    color: black;
+    background-color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
