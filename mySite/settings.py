@@ -7,10 +7,10 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = True
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-APP_ID = os.getenv("APP_ID")
-APP_KEY = os.getenv("APP_KEY")
-print(APP_ID)
-print(APP_KEY)
+# APP_ID = os.getenv("APP_ID")
+# APP_KEY = os.getenv("APP_KEY")
+# print(APP_ID)
+# print(APP_KEY)
 
 INSTALLED_APPS = [
     'main',
