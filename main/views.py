@@ -3,9 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View,TemplateView
 import requests
 import json
-# from config import APP_ID, APP_KEY
 import os
-# from pydictionary import Dictionary
 import configparser
 
 class Index(TemplateView):
@@ -22,7 +20,6 @@ class Lookup(View):
                 APP_ID = config.get('APP', 'APP_ID')
                 endpoint = "entries"
                 language_code = "en-us"
-                word_id = "example"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
                 response = requests.get(url, headers = {"app_id": str(APP_ID), "app_key": str(APP_KEY)})
                 r = json.loads(response.text)
