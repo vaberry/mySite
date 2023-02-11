@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.views.generic import View,TemplateView
 import requests
 import json
+# from mySite.settings import LOOKUP_APP_ID, LOOKUP_APP_KEY
 import os
-from mySite.settings import LOOKUP_APP_ID, LOOKUP_APP_KEY
 
 class Index(TemplateView):
     template_name='index.html'
@@ -13,6 +13,8 @@ class Lookup(View):
         if request.method == "GET":
 
             if 'word' in request.GET:
+                LOOKUP_APP_ID = os.getenv("APP_ID")
+                LOOKUP_APP_KEY = os.getenv("APP_KEY")
                 word = request.GET.get('word')
                 endpoint = "entries"
                 language_code = "en-us"
