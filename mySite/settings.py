@@ -3,11 +3,9 @@ from django.core.management.utils import get_random_secret_key
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-# project_name = str(BASE_DIR).split('\\')[-1]
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
-# DEBUG = os.getenv("DEBUG", "False") == "True"
-DEBUG = True
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+DEBUG = False
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 INSTALLED_APPS = [
