@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views.generic import View,TemplateView
 import requests
 import json
-# from mySite.settings import LOOKUP_APP_ID, LOOKUP_APP_KEY
 import os
 
 class Index(TemplateView):
@@ -13,15 +12,15 @@ class Lookup(View):
         if request.method == "GET":
 
             if 'word' in request.GET:
-                LOOKUP_APP_ID = os.getenv("APP_ID")
-                LOOKUP_APP_KEY = os.getenv("APP_KEY")
                 word = request.GET.get('word')
+                APP_ID = os.getenv("APP_ID")
+                APP_KEY = os.getenv("APP_KEY")
                 endpoint = "entries"
                 language_code = "en-us"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
-                r = requests.get(url, headers = {"app_id": str(LOOKUP_APP_ID), "app_key": str(LOOKUP_APP_KEY)})
-                response = json.loads(r.text)
-                definition = response["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]             
+                response = requests.get(url, headers = {"app_id": str(APP_ID), "app_key": str(APP_KEY)})
+                r = json.loads(response.text)
+                definition = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]             
 
                 context = {
                     'word' : word,
