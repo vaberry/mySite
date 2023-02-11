@@ -18,7 +18,6 @@ class Lookup(View):
                 language_code = "en-us"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
                 response = requests.get(url, headers = {"app_id": str(LOOKUP_APP_ID), "app_key": str(LOOKUP_APP_KEY)})
-
                 r = json.loads(response.text)
                 if "results" in r.keys():
                     definition = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]
