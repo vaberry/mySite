@@ -3,7 +3,7 @@ from django.views.generic import View,TemplateView
 import requests
 import json
 import os
-import configparser
+from mySite.settings import APP_ID, APP_KEY
 
 class Index(TemplateView):
     template_name='index.html'
@@ -14,8 +14,8 @@ class Lookup(View):
 
             if 'word' in request.GET:
                 word = request.GET.get('word')
-                APP_ID = os.getenv("APP_ID")
-                APP_KEY = os.getenv("APP_KEY")
+                # APP_ID = os.getenv("APP_ID")
+                # APP_KEY = os.getenv("APP_KEY")
                 endpoint = "entries"
                 language_code = "en-us"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
