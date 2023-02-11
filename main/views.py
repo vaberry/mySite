@@ -4,6 +4,7 @@ from django.views.generic import View,TemplateView
 import requests
 import json
 from config import APP_ID, APP_KEY
+import os
 # from pydictionary import Dictionary
 
 class Index(TemplateView):
@@ -14,13 +15,13 @@ class Lookup(View):
         if request.method == "GET":
             if 'word' in request.GET:
                 word = request.GET.get('word')
-                app_id = APP_ID
-                app_key = APP_KEY
+                APP_ID = os.getenv("APP_ID")
+                APP_KEY = os.getenv("APP_KEY")
                 endpoint = "entries"
                 language_code = "en-us"
                 word_id = "example"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
-                response = requests.get(url, headers = {"app_id": app_id, "app_key": app_key})
+                response = requests.get(url, headers = {"app_id": APP_ID, "app_key": APP_KEY})
                 print(type(response.text))
                 print(type(json.loads(response.text)))
                 r = json.loads(response.text)
