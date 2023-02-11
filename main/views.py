@@ -12,12 +12,15 @@ class Index(TemplateView):
 class Lookup(View):
     def get(self, request, *args, **kwargs):
         if request.method == "GET":
+
             if 'word' in request.GET:
                 word = request.GET.get('word')
                 config = configparser.ConfigParser()
                 config.read('.env')
-                APP_KEY = config.get('APP', 'APP_KEY')
-                APP_ID = config.get('APP', 'APP_ID')
+                # APP_KEY = config.get('APP', 'APP_KEY')
+                # APP_ID = config.get('APP', 'APP_ID')
+                APP_ID = os.getenv("APP_ID")
+                APP_KEY = os.getenv("APP_KEY")
                 endpoint = "entries"
                 language_code = "en-us"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
