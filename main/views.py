@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic import View,TemplateView
 import requests
 import json
@@ -15,10 +14,6 @@ class Lookup(View):
 
             if 'word' in request.GET:
                 word = request.GET.get('word')
-                config = configparser.ConfigParser()
-                config.read('.env')
-                # APP_KEY = config.get('APP', 'APP_KEY')
-                # APP_ID = config.get('APP', 'APP_ID')
                 APP_ID = os.getenv("APP_ID")
                 APP_KEY = os.getenv("APP_KEY")
                 endpoint = "entries"
