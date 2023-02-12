@@ -65,14 +65,10 @@ a {
 .projects-list {
 	display: flex;
 	flex-wrap: wrap;
-	background-color: DodgerBlue;
-}
+	}
 
-.projects-list > div {
-	background-color: #f1f1f1;
-	width: 80px;
-	margin: 10px;
-	text-align: center;
-	line-height: 75px;
-	font-size: 30px;
+.project-box {
+	border: 5px solid black;
+	margin-left: 20px;
+	margin-right: 20px;
 }

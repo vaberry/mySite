@@ -3,6 +3,7 @@ from django.views.generic import View,TemplateView
 import requests
 import json
 import os
+from mySite.settings import DEVELOPMENT_MODE
 
 class Index(TemplateView):
     template_name='index.html'

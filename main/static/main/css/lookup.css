@@ -16,11 +16,16 @@ input {
 }
 
 .search-form {
-    border: 5px solid;
+    /* border: 5px solid; */
     position: absolute;
     top: 30%;
     right: 50%;
     transform: translate(50%, -50%);
+    width: 50vw;
+}
+
+.search-form input {
+    width: 50vw;
 }
 
 .word-input {
@@ -36,8 +41,8 @@ input {
     top: 60%;
     right: 50%;
     transform: translate(50%, -50%);
-    height: 30vh;
-    width: 50vw;
+    height: 40vh;
+    width: 60vw;
     overflow-y: scroll;
 }
 

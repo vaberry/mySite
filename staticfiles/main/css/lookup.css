@@ -16,11 +16,16 @@ input {
 }
 
 .search-form {
-    border: 5px solid;
+    /* border: 5px solid; */
     position: absolute;
     top: 30%;
     right: 50%;
     transform: translate(50%, -50%);
+    width: 50vw;
+}
+
+.search-form input {
+    width: 50vw;
 }
 
 .word-input {
@@ -29,15 +34,15 @@ input {
 
 .display-form {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: .75fr .5fr .75fr;
     background-color: white;
     border: 5px solid;
     position: absolute;
     top: 60%;
     right: 50%;
     transform: translate(50%, -50%);
-    height: 30vh;
-    width: 40vw;
+    height: 40vh;
+    width: 60vw;
     overflow-y: scroll;
 }
 
@@ -48,3 +53,19 @@ input {
     margin-right: 25px;
 }
 
+.display-header {
+    /* text-align: center; */
+    padding-left: 20px;
+    background-color: white;
+    color: black;
+}
+
+.display-header-synonyms {
+    text-align: center;
+    /* background-color: white; */
+    color: black;
+}
+
+.display-grid {
+    background-color: white;
+}
