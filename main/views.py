@@ -19,14 +19,27 @@ class Lookup(View):
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
                 response = requests.get(url, headers = {"app_id": str(LOOKUP_APP_ID), "app_key": str(LOOKUP_APP_KEY)})
                 r = json.loads(response.text)
-                if "results" in r.keys():
+
+                try:
                     definition = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]
-                else:
-                    definition = ["No results found..."]           
+                except:
+                    definition = ["No definitions found..."]
+                try:
+                    synonyms = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["synonyms"]
+                    synonyms = [i['text'] for i in synonyms]
+                except:
+                    synonyms = ["No synonyms found..."]
+                try:
+                    examples = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]['examples']
+                    examples = [i['text'] for i in examples]
+                except:
+                    examples = ["No examples found..."]  
 
                 context = {
                     'word' : word,
                     'definition' : definition,
+                    'synonyms' : synonyms,
+                    'examples' : examples,
                 }
                 return render(request, template_name="lookup.html", context=context)
         return render(request, template_name="lookup.html")
