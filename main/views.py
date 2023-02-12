@@ -3,18 +3,16 @@ from django.views.generic import View,TemplateView
 import requests
 import json
 import os
-from mySite.settings import DEVELOPMENT_MODE
 from dotenv import load_dotenv
 
 load_dotenv()
 
-class Index(TemplateView):
-    template_name='index.html'
+class Home(TemplateView):
+    template_name='home.html'
 
 class Lookup(View):
     def get(self, request, *args, **kwargs):
         if request.method == "GET":
-            print('DEVELOPMENT MODE IS', DEVELOPMENT_MODE)
             if 'word' in request.GET:
                 word = request.GET.get('word')
                 LOOKUP_APP_ID = os.getenv("LOOKUP_APP_ID")

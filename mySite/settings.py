@@ -5,13 +5,15 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = True
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost", '*').split(",")
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 LOOKUP_APP_ID = os.getenv("LOOKUP_APP_ID")
 LOOKUP_APP_KEY = os.getenv("LOOKUP_APP_KEY")
 
 INSTALLED_APPS = [
     'main',
+    'fontawesomefree',
+    'livereload',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -19,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -29,6 +31,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'mySite.urls'

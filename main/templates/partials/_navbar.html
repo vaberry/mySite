@@ -1,0 +1,32 @@
+{% load static %}
+<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'main/css/_navbar.css' %}">
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">
+            <i class="fa-solid fa-house-chimney fa-2xl"></i>
+            <p>Home</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'lookup' %}">
+            <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+            <p>Word Lookup</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'scraper' %}">
+            <i class="fa-light fa-spider-web"></i>
+            <p>Home</p>
+            </a>
+        </li>
+      </ul>
+    </div>
+  </nav>

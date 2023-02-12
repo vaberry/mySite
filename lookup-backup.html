@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'main/css/lookup.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sassy+Frass">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <title>Projects: Word Lookup</title>
+</head>
+<body>
+    <div class="search-form">
+        <form action="" method="get">
+            <input class="word-input" type="text" name="word" placeholder="Search for a word...">
+            <button type="submit" hidden>Submit</button>
+        </form>
+    </div>
+    <div>
+        <h1 style="text-align: center; margin-top: 75px;">{{ word }}</h1>
+    </div>
+    <div class="display-form">
+        <div class="display-grid">
+            <h4 class="display-header">Definition:</h4>
+            {% for d in definition %}
+            <p>{{ d }}</p>
+            {% endfor %}
+        </div>
+        <div class="display-grid" style="background-color: lightgray;">
+            <h4 class="display-header" style="background-color: lightgray;">Synonyms:</h4>
+            {% for s in synonyms %}
+            <p style="background-color: lightgray;">{{ s }}</p>
+            {% endfor %}
+        </div>
+        <div class="display-grid">
+            <h4 class="display-header">Examples:</h4>
+            {% for e in examples %}
+            <p>{{ e }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
