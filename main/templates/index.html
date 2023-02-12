@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sassy+Frass">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
-
-    <title>Vet | MBA | Python Nerd</title>
+    <title>Veteran | MBA | Python Nerd</title>
 </head>
 <body>
     <div class="flex-container">
@@ -46,6 +45,7 @@
         </div>
         <div class="technologies">
             <h3>Technologies</h3>
+            <!-- <hr style="background-color: black;"> -->
             <div>
                 <img src="{% static 'main/img/python.png' %}" alt="">
                 <img src="{% static 'main/img/javascript.png' %}" alt="">
@@ -74,8 +74,13 @@
             <h3>Projects</h3>
             <div class="projects-list">
                 <div class="project-box">
-                    <a href="{% url 'lookup' %}"><img src="{% static 'main/img/magnifying-glass.png' %}" alt="">
-                        <p style="margin: 10px;">Word Search</p>                    
+                    <a href="{% url 'lookup' %}"><img src="{% static 'main/img/magnifying-glass.png' %}" alt="" style="margin-top: 10px;">
+                        <h4 style="margin: 10px;">Word Lookup</h4>                    
+                    </a>
+                </div>
+                <div class="project-box">
+                    <a href="{% url 'scraper' %}"><img src="{% static 'main/img/scraper.png' %}" alt="" style="margin-top: 10px;">
+                        <h4 style="margin: 10px;">Web Scraper</h4>                    
                     </a>
                 </div>
             </div>  

@@ -14,6 +14,7 @@ class Index(TemplateView):
 class Lookup(View):
     def get(self, request, *args, **kwargs):
         if request.method == "GET":
+            print('DEVELOPMENT MODE IS', DEVELOPMENT_MODE)
             if 'word' in request.GET:
                 word = request.GET.get('word')
                 LOOKUP_APP_ID = os.getenv("LOOKUP_APP_ID")
@@ -21,10 +22,11 @@ class Lookup(View):
                 endpoint = "entries"
                 language_code = "en-us"
                 url = "https://od-api.oxforddictionaries.com/api/v2/" + endpoint + "/" + language_code + "/" + word.lower()
-                # if not DEVELOPMENT_MODE:
-                #     response = requests.get(url, headers = {"app_id": str(os.getenv('APP_ID')), "app_key": str(os.getenv('APP_KEY'))})
-                # else:
-                response = requests.get(url, headers = {"app_id": str(LOOKUP_APP_ID), "app_key": str(LOOKUP_APP_KEY)})
+                if not DEVELOPMENT_MODE:
+                    response = requests.get(url, headers = {"app_id": str(os.getenv('APP_ID')), "app_key": str(os.getenv('APP_KEY'))})
+                else:
+                    response = requests.get(url, headers = {"app_id": str(LOOKUP_APP_ID), "app_key": str(LOOKUP_APP_KEY)})
+
                 r = json.loads(response.text)
                 try:
                     definition = r["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]
@@ -49,3 +51,9 @@ class Lookup(View):
                 }
                 return render(request, template_name="lookup.html", context=context)
         return render(request, template_name="lookup.html")
+    
+class Scraper(TemplateView):
+    def get(self, request, *args, **kwargs):
+        if request.method == "GET":
+            pass
+        return render(request, template_name="scraper.html")
