@@ -71,4 +71,6 @@ a {
 	border: 5px solid black;
 	margin-left: 20px;
 	margin-right: 20px;
+	border-radius: 10%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

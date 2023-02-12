@@ -4,7 +4,6 @@ import requests
 import json
 import os
 from mySite.settings import DEVELOPMENT_MODE
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
