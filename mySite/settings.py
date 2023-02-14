@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'main',
     'fontawesomefree',
     # 'livereload',
+    'channels',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -23,6 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     ]
+
+ASGI_APPLICATION = 'mySite.asgi.application'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
