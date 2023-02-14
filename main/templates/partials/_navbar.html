@@ -1,32 +1,41 @@
 {% load static %}
-<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
-<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
 <link rel="stylesheet" href="{% static 'main/css/_navbar.css' %}">
-<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img class="navbar-img" src="{% static 'main/img/headshot.jpg' %}" alt="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">
-            <i class="fa-solid fa-house-chimney fa-2xl"></i>
-            <p>Home</p>
-            </a>
-        </li>
 
+      <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'lookup' %}">
-            <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
-            <p>Word Lookup</p>
-            </a>
+          <a class="nav-link" href="{% url 'home' %}">
+            <div class="nav-img">
+              <i class="fas fa-home fa-2xl mb-1"></i>
+              <p>Home</p>
+            </div>
+          </a>
         </li>
-
+        
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'scraper' %}">
-            <i class="fa-light fa-spider-web"></i>
-            <p>Home</p>
-            </a>
+          <a class="nav-link" href="{% url 'lookup' %}">
+            <div class="nav-img">
+              <i class="fas fa-magnifying-glass fa-2xl mb-1"></i>
+              <p>Word Lookup</p>
+            </div>
+          </a>
         </li>
       </ul>
+
     </div>
-  </nav>
+  </div>
+</nav>
